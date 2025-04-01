@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0/1 Knapsack problem</title>
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+      input:invalid {
+        outline: red solid 3px;
+      }
+    </style>
+</head>
+<body>
+    <header id="controls" style="display: flex;flex-wrap: wrap;gap: 28px;"> 
+        <div>
+          <h1 style="margin: 0 auto;width: fit-content;">0/1 Knapsack problem (Problém batohu)</h1>
+          <div id="left" style="display: inline-flex;align-items: baseline;flex-wrap: wrap;column-gap: 10px;justify-content: center;">
+                <p id="visualisationDelayControls">Delay in ms:
+                  <input type="number" min="0" style="width: 5rem" value="1000" id="visualisationDelayPicker">
+                </p>
+          </div>
+        </div>
+          <div id="right" style="flex-grow: 1;flex-basis: 431px;min-width: min-content;"> <!-- originally there was flex-basis: min-content; it worked pretty well, I just wanted to move the breakpoint of how it wraps to a bit wider, I wanted to put flex-basis: calc(min-content + 50px), but it doesn't work, so I tried padding-left: 50px, which worked, but it looked weird again on my phone (I didn't want to add more media query, so I added flex-basis: 431px (value found experimentally)) -->
+            <div id="legenda" style="display: flex;gap:20px;flex-wrap: wrap">
+              <!-- Maybe make it a table instead since I want the list of item weights and prices to be in one column (above each other) -->
+              <div class="textHolder">
+                <label>List of item weights: <input id="weights" type="text" value="1,2,5,6" pattern="^\d+(?:[ \t]*,[ \t]*\d+)*$"></label>
+              </div> 
+              <div class="textHolder">
+                <!-- regex inspired by https://stackoverflow.com/a/41725592 -->
+                <label>List of item prices (profits): <input id="prices" type="text" value="2,3,4,5" pattern="^\d+(?:[ \t]*,[ \t]*\d+)*$"></label> 
+              </div>
+              <div class="textHolder">
+                <label>Knapsack Weight: <input id="bag_weight" type="number" value="8"></label>
+              </div>
+              <div class="textHolder">
+                 <button id="launch">Launch</button>
+              </div>
+            </div>
+          </div>
+    </header>
+    <main style="box-sizing: border-box;padding:0px">
+        <!-- <responsive-grid rows="15" columns="50" max-length="3" cellStyles="visualisation.css"></responsive-grid> -->
+    </main>
+    <p class="presentResult"><br></p>
+    
+    <script type="module" src="mazeGridComponent.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

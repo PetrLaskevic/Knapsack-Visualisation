@@ -1,0 +1,101 @@
+/* Styles for the grid to use for cells */
+.selectedVertical{
+    background: #c77e1f;
+    background: #ee6624;;
+}
+.green {
+    background: green;
+}
+
+.selectedOnWalkThrough{
+    filter: invert(1) contrast(0.8);
+}
+
+.selectedHorizontal{
+    background: #6acd67;
+}
+
+.cell{
+    color: var(--distancesColor);
+}
+
+.start{
+    background: #f85701 !important;
+}
+.end{
+    background: #0022a5 !important;  /* maybe #00a56f;*/
+}
+
+.considered{
+    background: #ffd68a;
+}
+
+.prev{
+    background: cornflowerblue;
+}
+
+.chose{
+    border: 0.32em solid #3de185; /*9px*/
+    border-radius: 27px;
+}
+.from{
+    border: 4px solid white;
+    background: brown;
+}
+.roundBorder{ /*.chose but monochrome */
+    border: 0.2em solid; /*7px*/
+    border-radius: 27px;
+}
+
+/*dark theme*/
+@media (prefers-color-scheme: dark) {
+    .considered{
+        background: #888; /* #5f5bcc */
+    }
+    .previously-considered{
+        background: #0305831c;
+    }
+    .green{
+        background: #206e2f8c;
+    }
+    .end{
+        background: #00d38e !important;  /* #0022a5; for light theme = nicely legible in light theme, not so in dark theme, similarly to the green color in light theme,   or maybe #00a56f;*/
+    }
+    .endText{
+        color: #00d38e;
+    }
+    .selectedHorizontal{
+        background: #41813f;
+    }
+    .selectedVertical{
+        /* background: #0ecea1d4;
+        background: #00d38e;
+        background: #00e1976b; #2876b0 */
+        background: #30a7ffb8;
+    }
+    .endCtverecek{
+        background: #00d38e;
+    }
+    .visited:not(.green, .start){
+        background: #c77e1fbf;
+    }
+    .skipped:not(.green, .start){
+        background: #4eb54bc2; 
+    }
+    /*nutne pridat :not(.green, .start), aby to mathchlo specificitu (a prebilo, protoze je pod tim) .visited:not(.green, .start)*/
+    .explored:not(.green, .start){
+        background: #4eb54bc2; /*#4eb54b*/
+    }
+    .from{
+        border: 4px solid white;
+    }
+    .exploredText{
+        color: #4eb54bc2;
+    }
+    .pathText{
+        color: #008eff; /*#1b90ed*/
+    }
+    .prev{
+        background: #4d72b4;
+    }
+}
