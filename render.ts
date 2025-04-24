@@ -82,6 +82,7 @@ class Knapsack{
 	}
 
 	async main(){
+		this.grid.makeDiagCornerCell();
 		//set the column indexes (as headings)
 		for(let x = 0; x <= this.knapsackWeight; x++){
 			this.grid.setTextToCell([0,x+1], x);

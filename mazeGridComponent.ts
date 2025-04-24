@@ -148,6 +148,15 @@ class ResponsiveGrid extends HTMLElement implements GridInterface{
         return (this.grid.children[row * this.columns + column] as HTMLDivElement);
     }
 
+    makeDiagCornerCell(){
+        this.elementAt(0,0).innerHTML = `
+        <div class='cellDiag'>
+            <div class='cellDiag--topRight'>W</div>
+            <div class='cellDiag--bottomLeft'>n</div>
+        </div>
+        `
+    }
+
     addClassToCell(coordinates: [row: number, column: number], className: string){
         let row, column;
         [row, column] = coordinates;
