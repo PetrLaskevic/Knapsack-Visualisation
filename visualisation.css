@@ -55,14 +55,14 @@ thanks to:
  https://www.peterkrautzberger.org/0213/ */
 .cellDiag {
     display: grid;
-    width: max-content;
+    width: max-content; /*not 100% of parent .cell, as that would shift letters too close to left & right edges*/
     justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
-    border: 1px solid #000;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='green' vector-effect='non-scaling-stroke'/></svg>");
+    border: 1px solid rgba(0,0,0,0); /*transparent border for cosmetic layout purposes (shifts the letters 1px down)*/                                                                  /*%23 is url escaped #*/
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='%23816d48' vector-effect='non-scaling-stroke'/></svg>");
     background-size: 100% 100%;
-    /* margin-bottom: 1rem; */
+    background-repeat: no-repeat;
     height: 100%;
     box-sizing: border-box;
   }
@@ -78,6 +78,9 @@ thanks to:
 
 /*dark theme*/
 @media (prefers-color-scheme: dark) {
+    .cellDiag{
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='green' vector-effect='non-scaling-stroke'/></svg>");
+    }
     .considered{
         background: #888; /* #5f5bcc */
     }
