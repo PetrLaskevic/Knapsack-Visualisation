@@ -96,11 +96,11 @@ class Knapsack{
 
 		console.log("itemPrices", this.itemPrices)
 		//0 based so we don't have to think about the table and its headings in indexing
-		for(let n = 0; n <= this.numberOfItems; n++){
-			let wi = this.itemWeights[n - 1];
-			let pi = this.itemPrices[n - 1];
+		for(let w = 0; w <= this.knapsackWeight; w++){
 			await wait(animationDelay.value);
-			for(let w = 0; w <= this.knapsackWeight; w++){
+			 for(let n = 0; n <= this.numberOfItems; n++){
+				let wi = this.itemWeights[n - 1];
+				let pi = this.itemPrices[n - 1];
 				await wait(animationDelay.value);
 				//Leaf: 
 				// no items left (n==0)
